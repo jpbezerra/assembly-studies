@@ -1,7 +1,7 @@
 .data
-	msg: .asciiz "Digite um número inteiro: "
-	msg_par: .asciiz "Este número é par!"
-	msg_impar: .asciiz "Este número é ímpar!"
+	msg: .asciiz "Digite um nÃºmero inteiro: "
+	msg_par: .asciiz "Este nÃºmero Ã© par!"
+	msg_impar: .asciiz "Este nÃºmero Ã© Ã­mpar!"
 	
 .text
 .main:
@@ -10,13 +10,13 @@
 	la $a0, msg
 	syscall
 	
-	# função input_numero
+	# funÃ§Ã£o input_numero
 	jal input_numero
 	
-	# verificando se o número é par ou ímpar
+	# verificando se o nÃºmero Ã© par ou Ã­mpar
 	jal verify
 
-# nesta função eu peço o input de um inteiro e faço operações	
+# nesta funÃ§Ã£o eu peÃ§o o input de um inteiro e faÃ§o operaÃ§Ãµes	
 input_numero:
 	# ler inteiro
 	li $v0, 5
@@ -34,20 +34,18 @@ input_numero:
 	# guardando o valor de $hi em $a0
 	mfhi $a0
 	
-	# retornando a função
+	# retornando a funÃ§Ã£o
 	jr $ra
 
-	# não é preciso retornar pois não temos mais nada na main
-
-# função de verificar se é par ou ímpar
+# funÃ§Ã£o de verificar se Ã© par ou Ã­mpar
 verify:
-	# se $a0 é par
+	# se $a0 Ã© par
 	beq $a0, $zero, imprimir_par
 	
-	# se é ímpar (não precisa dessa operação, poderíamos apenas ter colocado o código da label logo abaixo)
+	# se Ã© Ã­mpar (nÃ£o precisa dessa operaÃ§Ã£o, poderÃ­amos apenas ter colocado o cÃ³digo da label logo abaixo)
 	bne $a0, $zero, imprimir_impar
 	
-	# não é preciso retornar pois não iremos fazer mais nada no código
+	# nÃ£o Ã© preciso retornar pois nÃ£o iremos fazer mais nada no cÃ³digo
 
 	imprimir_par: 
 		# imprimindo msg_par
@@ -55,7 +53,7 @@ verify:
 		la $a0, msg_par
 		syscall
 	
-		# chamando a função exit
+		# chamando a funÃ§Ã£o exit
 		jal exit
 	
 	imprimir_impar:
@@ -64,7 +62,7 @@ verify:
 		la $a0, msg_impar
 		syscall
 	
-		# chamando a função exit
+		# chamando a funÃ§Ã£o exit
 		jal exit
 		
 exit:
