@@ -1,10 +1,10 @@
-# código que calcula p IMC (desde que os valores sejam inteiros)
+# cï¿½digo que calcula p IMC (desde que os valores sejam inteiros)
 
 .data
-	msg_nome: .asciiz "Qual é o seu nome? "
-	msg_peso: .asciiz "Qual é o seu peso? "
-	msg_altura: .asciiz "Qual é a sua altura? "
-	msg_imc: .asciiz ", o seu IMC é: "
+	msg_nome: .asciiz "Qual ï¿½ o seu nome? "
+	msg_peso: .asciiz "Qual ï¿½ o seu peso? "
+	msg_altura: .asciiz "Qual ï¿½ a sua altura? "
+	msg_imc: .asciiz ", o seu IMC ï¿½: "
 	
 	nome: .space 25
 	
@@ -62,7 +62,6 @@
 	
 	# dividindo o peso ($s0) pela altura ao quadrado ($s1)
 	div $s0, $s2
-	
 	
 	# imprimindo o resultado do IMC
 	li $v0, 1
