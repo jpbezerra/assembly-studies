@@ -11,5 +11,5 @@
 	 
 	syscall # faça o que está em $a0
 
-	li $v0, 10
+	li $v0, 10 # finalizar o programa
 	syscall
