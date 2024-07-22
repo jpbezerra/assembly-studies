@@ -1,12 +1,15 @@
 .data
-	# ·rea para dados na memÛria principal
-	msg: .asciiz "Ol·, mundo!" # mensagem de ol· mundo
+	# √°rea para dados na mem√≥ria principal
+	msg: .asciiz "Ol√°, mundo!" # mensagem de ol√° mundo
 
 
 .text
-	# ·rea para instruÁıes do programa
+	# √°rea para instru√ß√µes do programa
 	
-	li $v0, 4 # impress„o de string
-	la $a0, msg # indicar o endereÁo em que est· a mensagem
+	li $v0, 4 # impress√£o de string
+	la $a0, msg # indicar o endere√ßo em que est√° a mensagem
 	 
-	syscall # faÁa o que est· em $a0
+	syscall # fa√ßa o que est√° em $a0
+
+	li $v0, 10
+	syscall
