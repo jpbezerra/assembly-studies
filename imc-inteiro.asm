@@ -1,10 +1,10 @@
-# c�digo que calcula p IMC (desde que os valores sejam inteiros)
+# código que calcula p IMC (desde que os valores sejam inteiros)
 
 .data
-	msg_nome: .asciiz "Qual � o seu nome? "
-	msg_peso: .asciiz "Qual � o seu peso? "
-	msg_altura: .asciiz "Qual � a sua altura? "
-	msg_imc: .asciiz ", o seu IMC �: "
+	msg_nome: .asciiz "Qual é o seu nome? "
+	msg_peso: .asciiz "Qual é o seu peso? "
+	msg_altura: .asciiz "Qual é a sua altura? "
+	msg_imc: .asciiz ", o seu IMC é: "
 	
 	nome: .space 25
 	
