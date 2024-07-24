@@ -6,7 +6,7 @@
 	espaco: .byte ' '
 .text
 .main:
-	# Ìndice do array
+	# √≠ndice do array
 	move $t0, $zero
 	
 	# valor a ser colocado no array
@@ -20,13 +20,13 @@ loop:
 	# se $t0 == 16, sai do loop
 	beq $t0, $t2, exit_loop
 	
-	# caso contr·rio, colocar %t1 em array($t0)
+	# caso contr√°rio, colocar $t1 em array($t0)
 	sw $t1, array($t0)
 	
-	# incrementando o Ìndice
+	# incrementando o √≠ndice
 	addi $t0, $t0, 4
 	
-	# incrementando o n˙mero
+	# incrementando o n√∫mero
 	addi $t1, $t1, 1
 	
 	# voltando ao loop
@@ -42,25 +42,25 @@ exit_loop:
 
 # label de imprimir os elementos da array
 imprime: 
-	# se $t0 == 16, sai da impress„o
+	# se $t0 == 16, sai da impress√£o
 	beq $t0, $t2, exit
 	
 	# imprimindo inteiro
 	li $v0, 1
 	
-	# atribuindo array($t0) ‡ $a0
+	# atribuindo array($t0) √† $a0
 	lw $a0, array($t0)
 	syscall
 	
-	# imprimindo um espaÁo em branco
+	# imprimindo um espa√ßo em branco
 	li $v0, 4
 	la $a0, espaco
 	syscall
 	
-	# incrementando o Ìndice
+	# incrementando o √≠ndice
 	addi $t0, $t0, 4
 	
-	# voltando ao loop de impress„o
+	# voltando ao loop de impress√£o
 	j imprime
 
 exit:
