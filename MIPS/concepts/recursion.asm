@@ -1,13 +1,13 @@
 .data
 	list: 
 		.align 2 
-		.word 40 # lista que carrega no máximo 100 números
+		.word 40 # lista que carrega no máximo 10 números (máximo possível por causa das limitações do tamanho de números do assembly)
 	
 	# código que faz o fatorial de um número (considerando apenas os números ímpares)
 
 .text
 	main:
-		# lê um inteiro (no máximo 200 por causa do tamanho da lista)
+		# lê um inteiro (no máximo 20 por causa do tamanho da lista e limitações)
 		li $v0, 5
 		syscall
 		
@@ -73,7 +73,7 @@
 				jal operations
 	
 	loop:
-		# se acabou, os números, o código acaba
+		# se acabou os números, o código acaba
 		beq $t4, 0, exit
 	
 		# pegando o número no índice em $t2
@@ -88,12 +88,15 @@
 		# diminuindo o tamanho da lista
 		subi $t4, $t4, 1
 		
+		# volta ao loop
 		j loop
 		
 		exit:
+			# printando o resultado obtido
 			li $v0, 1
 			move $a0, $t1
 			syscall
 			
+			# saindo do programa
 			li $v0, 10
 			syscall
